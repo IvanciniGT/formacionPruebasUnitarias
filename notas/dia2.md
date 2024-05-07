@@ -309,3 +309,9 @@ proyecto/
                             Archivos xml con los resultados de las pruebas
                                 ^^^ Estos archivos son los que lee un programa como JENKINS para saber si las pruebas han pasado o no
     pom.xml                 Archivo de configuración de maven
+
+---
+
+Metodologías de desarrollo de software
+- Test-First: Escribir las pruebas antes que el código
+- TDD: Test-Driven Development: Test-First + Refactorización

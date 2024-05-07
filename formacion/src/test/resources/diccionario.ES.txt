@@ -1,0 +1,3 @@
+manzana=Fruta del manzano
+pera=Fruta del peral
+Melón=Fruta del melonero|Persona con pocas luces
