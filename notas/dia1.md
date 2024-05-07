@@ -371,7 +371,7 @@ Quiero un comando que me permita por consola suministrar una palabra y un idioma
 
     ITERACIÓN (SPRINT) 1: Fecha + Listado de requisitos:
         10 de Junio, tiene que estar el R1, R2, R7
-        Qué pasa si el día 10 nno está acabado el R7 -> La fecha no se toca ni de coña. Y el día 10 -> Paso a producción.
+        Qué pasa si el día 10 no está acabado el R7 -> La fecha no se toca ni de coña. Y el día 10 -> Paso a producción.
         Y el R7.. pa'l siguiente sprint.
         10% de la funcionalidad     => ESTO IMPLICA PRUEBAS (a nivel de producción)
                                         pruebo el 10%

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.curso</groupId>
+    <artifactId>formacion</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <packaging>jar</packaging> <!-- jar war ear pom -->
+
+    <properties> <!-- props para mis plugins ... y para mi proyecto -->
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies> <!-- dependencias de mi proyecto -->
+        <!--<dependency> <! - junit 4.13.1 - >
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.1</version>
+            <scope>test</scope>
+        </dependency>-->
+        <dependency> <!-- junit 5.7.1 -->
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.7.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <!--
+        version: 4.13.1
+                        Cuando suben?
+        4:      MAJOR  Breaking changes
+                        Cambios que no respetan retrocompatibilidad
+                        Básicamente cuando quito funciones del API... con o sin reemplazo
+        13:     MINOR  Nuevas funcionalidades que respetan retrocompatibilidad
+                       Funciones marcadas como deprecated
+                        + Bug fixes
+        1:      PATCH  Bug fixes
+    -->
+    <!-- para asegurarme que hay una versión del plugin surefire compatible con junit 5 -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <!-- version>2.22.2</version -->
+                <version>3.1.2</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
