@@ -12,3 +12,5 @@ https://github.com/IvanciniGT/formacionSpringAvanzado
 
 # Formación de pruebas unitarias en microservicios con Spring
 https://github.com/IvanciniGT/formacionTestingBack
+
+ivan.osuna.ayuste@gmail.com
