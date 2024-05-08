@@ -13,4 +13,7 @@ https://github.com/IvanciniGT/formacionSpringAvanzado
 # Formación de pruebas unitarias en microservicios con Spring
 https://github.com/IvanciniGT/formacionTestingBack
 
+# Información sobre testing
+https://www.istqb.org/certifications/certified-tester-foundation-level
+
 ivan.osuna.ayuste@gmail.com
