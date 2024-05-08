@@ -7,8 +7,7 @@ package com.curso;
 // La máquina virtual de JAVA? NI DE COÑA...
 // Para que la JVM ejecute un método de una clase... necesitamos que el método se llame: main y esté declarado como static.
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 // Este archivo lo ejecuta el framework de testing JUNIT.
 // JUnit es quien tiene una clase con un método main que genera una instancia de mi clase:
@@ -28,6 +27,7 @@ import org.junit.jupiter.api.Test;
     }
 */
 // Junit no va a ejecutar todas las funciones de mi clase... Solo aquellas que tengan la anotación @Test
+//@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class AppTest {
 // Cuando le doy a play en el Eclipse o en el IntelliJ, El eclipse o el IntelliJ no ejecutan mi clase AppTest.
 // Llaman a una JVM que ejecuta JUNIT... y a JUNIT le pasan la clase AppTest.
@@ -82,5 +82,26 @@ class AppTest {
         double resultadoEsperado = 2;
         Assertions.assertEquals(resultadoEsperado, resultado, 0);
     }
+
+
+    @Test
+    //@Order(1)
+    // ^ PORQUE ESTO ES LA PEOR PRACTICA DEL MUNDO.
+    // Las pruebas no deben depender unas de otras. DEBEN SER INDEPENDIENTES.
+    //  Si necesito que una prueba se ejecute antes que otra... es que algo está mal.
+    // TIPICO EJEMPLO... Recupera una persona de la BBDD...
+    // PERO ESTA PRUEBA depende de otra prueba que dió de alta una persona en la BBDD.
+    // ===  RUINA !!!!! Las pruebas deben ser independientes.
+    // Que mi prueba de recuperar una persona, antes de nada //GIVEN, cree la persona que luego voy a recuperar.
+    // Eso lo habría arreglado haciendo:
+    void test1(){}
+
+    @Test
+    //@Order(2) // Pero cuidao... Esto solo funciona si anoto la clase con @TestMethodOrder
+    void test2(){}
+
+    // Recordad que JUNIT genera varias instancias de la clase de test.
+    // Y lanza (o puede ser que lance) las pruebas en paralelo.
+    // A priori no tengo ninguna garantía de que se vayan a ejecutar en un orden concreto.
 
 }

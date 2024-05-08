@@ -26,13 +26,31 @@
         <dependency> <!-- junit 5.7.1 -->
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.7.1</version>
+            <version>5.10.1</version>
             <scope>test</scope>
         </dependency>
         <dependency> <!-- junit 5.7.1 -->
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
-            <version>5.7.1</version>
+            <version>5.10.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency> <!-- junit platform: Integrador de frameworks de pruebas -->
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite</artifactId>
+            <version>1.10.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency> <!-- cucumber -->
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>7.15.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency> <!-- para poder invocar a cucumber desde JUNIT -->
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit-platform-engine</artifactId>
+            <version>7.15.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

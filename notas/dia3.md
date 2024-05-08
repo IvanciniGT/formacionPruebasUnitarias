@@ -35,3 +35,23 @@ Igual que tengo los principios SOLID para el diseño de código, tengo los princ
     R - Repeatable: Las pruebas deben ser repetibles
     S - Self-validating: Las pruebas deben ser autovalidables: DEBEN COMPROBAR TODAS LAS CONSECUENCIAS DE LA ACCION QUE SE ESTÁ PROBANDO
     T - Timely: Las pruebas deben ser oportunas. Estar diseñadas en el momento adecuado. Si no... para qué sirven? Ya no los hagas!
+
+---
+
+CUCUMBER:
+Un framework ALTERNATIVO A JUNIT para la definición de pruebas.... pero con montonón de ventajas
+Y porque me enseñas un framework alternativo a JUNIT si estamos en un curso de JUNIT !!!
+
+Me permite definir test en un lenguaje propio que tiene... llamado GHERKIN.
+La gracia de GHERKIN es que no es realmente un lenguaje... Son restricciones en el uso del lenguaje humano que querais: Español, Inglés, Asturiano, Aragonés, Catalán, Euskera, Gallego, Valenciano, etc...
+
+---
+
+JUNIT tiene un huevo de librerias...
+Y no solo es un framework que me permite definir pruebas...
+Tiene un motor de intrgación de frameworks de pruebas: JUNIT-PLATFORM
+
+JUNIT PLATFORM me permite delegar la ejecución de test desde JUNIT a otros frameworks de pruebas
+
+
+MAVEN -> surefire -> JUNIT -> JUNIT-PLATFORM -> CUCUMBER-JUNIT_PLATFORM > CUCUMBER
