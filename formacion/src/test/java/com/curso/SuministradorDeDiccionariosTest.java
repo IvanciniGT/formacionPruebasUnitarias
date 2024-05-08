@@ -3,6 +3,8 @@ package com.curso;
 //import org.junit.jupiter.api.Assertions;
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.Optional;
+import java.util.function.*;
 import org.junit.jupiter.api.*;
 
 //@TestInstance(TestInstance.Lifecycle.PER_CLASS) // Solo se hace 1 instancia de la clase de test.
@@ -10,7 +12,6 @@ import org.junit.jupiter.api.*;
 class SuministradorDeDiccionariosTest {
 
     /*
-    boolean tienesDiccionarioDe(String idioma);
     Optional<Diccionario> getDiccionario(String idioma);
      */
     private static SuministradorDeDiccionarios suministrador;
@@ -26,7 +27,7 @@ class SuministradorDeDiccionariosTest {
     //@AfterAll.. Equivalente a BeforeAll. Se ejecuta después de los tests. También debe ser static.
 
     // @BeforeEach y @AfterEach: Se ejecutan antes y después de cada test. Estas funciones no deben ser static.
-    
+
     @Test
     @DisplayName("Preguntar por un diccionario que sé que existe")
     void testTienesDiccionarioDeExistente() {
@@ -40,5 +41,46 @@ class SuministradorDeDiccionariosTest {
         // GIVEN: Partiendo de un suministrador de diccionarios que tiene un diccionario de ES
         String idioma = "DE LOS ELFOS";
         assertFalse(suministrador.tienesDiccionarioDe(idioma));
+    }
+    @Test
+    @DisplayName("Preguntar por un diccionario null")
+    void testTienesDiccionarioDeNull() {
+        /*try {
+            suministrador.tienesDiccionarioDe(null);
+        }catch(NullPointerException e) {
+            return;
+        }
+        fail("Debería haber cascao'");*/
+        assertThrows(NullPointerException.class, () -> suministrador.tienesDiccionarioDe(null));
+    }
+
+    @Test
+    @DisplayName("Recuperar un diccionario que sé que existe")
+    void testDameDiccionarioDeExistente() {
+        // GIVEN: Partiendo de un suministrador de diccionarios que tiene un diccionario de ES
+        String idioma = "ES";
+        Optional<Diccionario> diccionario = suministrador.getDiccionario(idioma);
+        assertTrue(diccionario.isPresent());
+        assertEquals(idioma, diccionario.get().getIdioma()); // IMPORTANTISIMO
+    }
+    @Test
+    @DisplayName("Recuperar un diccionario que sé que existe")
+    void testDameOtroDiccionarioDeExistente() {
+        // GIVEN: Partiendo de un suministrador de diccionarios que tiene un diccionario de ES
+        String idioma = "es";
+        assertTrue(suministrador.getDiccionario(idioma).isPresent());
+    }
+    @Test
+    @DisplayName("Recuperar un diccionario que sé que no existe")
+    void testDameDiccionarioDeNoExistente() {
+        // GIVEN: Partiendo de un suministrador de diccionarios que tiene un diccionario de ES
+        String idioma = "DE LOS ELFOS";
+        assertFalse(suministrador.getDiccionario(idioma).isPresent());
+    }
+    @Test
+    @DisplayName("Recuperar un diccionario null")
+    void testDameDiccionarioNull() {
+        // GIVEN: Partiendo de un suministrador de diccionarios que tiene un diccionario de ES
+        assertThrows(NullPointerException.class, () -> suministrador.getDiccionario(null));
     }
 }
