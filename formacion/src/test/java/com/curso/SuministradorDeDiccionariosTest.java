@@ -1,10 +1,8 @@
 package com.curso;
 
-//import org.junit.jupiter.api.Assertions;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Optional;
-import java.util.function.*;
 import org.junit.jupiter.api.*;
 
 //@TestInstance(TestInstance.Lifecycle.PER_CLASS) // Solo se hace 1 instancia de la clase de test.
