@@ -55,3 +55,28 @@ JUNIT PLATFORM me permite delegar la ejecución de test desde JUNIT a otros fram
 
 
 MAVEN -> surefire -> JUNIT -> JUNIT-PLATFORM -> CUCUMBER-JUNIT_PLATFORM > CUCUMBER
+
+
+
+----
+
+
+public class MiSinglenton {
+
+    private static volatile MiSinglenton instance = null;
+
+    private MiSinglenton() {
+    }
+
+    public static MiSinglenton getInstance() {
+        if (instance == null) { // para evitar el lock del sincronize
+            synchronized (MiSinglenton.class) { // Para asegurar que el trozo de dentro solo puede ser ejecutado por 1 hilo a la vez
+                if (instance == null) { // para que solo se genere una instancia de la clase
+                    instance = new MiSinglenton();
+                }
+            }
+        }
+        return instance;
+    }
+
+}
